@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>普通话课 - Mandarin Class</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  background: #ffffff;
+  color: #1a1a1a;
+  line-height: 1.6;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 100px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -5%;
+  width: 400px;
+  height: 400px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 50%;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 64px;
+  font-weight: 800;
+  margin-bottom: 15px;
+  letter-spacing: -2px;
+}
+
+.hero p {
+  font-size: 24px;
+  opacity: 0.95;
+  margin-bottom: 10px;
+  font-weight: 300;
+}
+
+.hero-subtitle {
+  font-size: 18px;
+  opacity: 0.85;
+  font-style: italic;
+  margin-top: 20px;
+}
+
+/* Classroom Hero Section */
+.classroom-visual {
+  background: #f8f9fa;
+  padding: 80px 20px;
+}
+
+.classroom-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.classroom-image {
+  width: 100%;
+  height: 420px;
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: white;
+  font-weight: 500;
+  text-align: center;
+  padding: 30px;
+  box-shadow: 0 20px 60px rgba(245, 87, 108, 0.3);
+}
+
+.classroom-text h2 {
+  font-size: 40px;
+  margin-bottom: 25px;
+  color: #1a1a1a;
+  font-weight: 700;
+}
+
+.classroom-text p {
+  font-size: 17px;
+  color: #555;
+  margin-bottom: 18px;
+  line-height: 1.9;
+}
+
+/* Features Section */
+.features {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px 20px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 44px;
+  margin-bottom: 70px;
+  color: #1a1a1a;
+  font-weight: 700;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 35px;
+}
+
+.feature-card {
+  background: white;
+  padding: 45px;
+  border-radius: 16px;
+  border-left: 5px solid #667eea;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(102, 126, 234, 0.15);
+}
+
+.feature-icon {
+  font-size: 44px;
+  margin-bottom: 18px;
+  display: block;
+}
+
+.feature-card h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #1a1a1a;
+  font-weight: 600;
+}
+
+.feature-card p {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.8;
+}
+
+/* Why Choose Section */
+.why-choose {
+  background: #f8f9fa;
+  padding: 100px 20px;
+}
+
+.why-choose-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.why-choose .section-title {
+  margin-bottom: 70px;
+}
+
+.reason-list {
+  display: grid;
+  gap: 28px;
+}
+
+.reason-item {
+  display: flex;
+  gap: 25px;
+  padding: 30px;
+  background: white;
+  border-radius: 14px;
+  border: 1px solid #e8e8e8;
+  transition: all 0.3s ease;
+}
+
+.reason-item:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  border-color: #667eea;
+}
+
+.reason-number {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 22px;
+}
+
+.reason-text h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #1a1a1a;
+  font-weight: 600;
+}
+
+.reason-text p {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.7;
+}
+
+/* CTA Section */
+.cta {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.cta-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.cta h2 {
+  font-size: 48px;
+  margin-bottom: 25px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.cta p {
+  font-size: 20px;
+  margin-bottom: 40px;
+  opacity: 0.95;
+  line-height: 1.8;
+}
+
+.cta-button {
+  display: inline-block;
+  background: white;
+  color: #667eea;
+  padding: 18px 50px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 17px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer */
+footer {
+  background: #222;
+  color: #999;
+  padding: 50px 20px;
+  text-align: center;
+  border-top: 1px solid #333;
+}
+
+footer p {
+  font-size: 15px;
+  margin: 5px 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero {
+    padding: 80px 20px;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+  }
+
+  .hero p {
+    font-size: 18px;
+  }
+
+  .classroom-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .classroom-image {
+    height: 350px;
+  }
+
+  .classroom-text h2 {
+    font-size: 32px;
+  }
+
+  .section-title {
+    font-size: 32px;
+    margin-bottom: 50px;
+  }
+
+  .cta h2 {
+    font-size: 36px;
+  }
+
+  .cta p {
+    font-size: 17px;
+  }
+
+  .feature-card {
+    padding: 30px;
+  }
+
+  .reason-item {
+    padding: 20px;
+    flex-direction: column;
+  }
+
+  .reason-number {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .classroom-text h2 {
+    font-size: 24px;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>普通话课</h1>
+    <p>Mandarin Class</p>
+    <p class="hero-subtitle">加入我们学习汉语！Join us on a journey to master Mandarin Chinese</p>
+  </div>
+</section>
+
+<!-- Classroom Visual -->
+<section class="classroom-visual">
+  <div class="classroom-grid">
+    <div class="classroom-image">
+      🏫 Modern, bright, clean classroom with computers, books, and collaborative learning spaces perfect for language practice
+    </div>
+    <div class="classroom-text">
+      <h2>A welcoming learning environment</h2>
+      <p>Our classroom is spacious, clean, and equipped with everything you need for success. With computers, books, and interactive learning tools, we create the perfect atmosphere for language mastery.</p>
+      <p>An excellent teacher guides you through each lesson, and your classmates become your study partners and friends.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Features -->
+<section class="features">
+  <h2 class="section-title">What you'll learn</h2>
+  <div class="feature-grid">
+    <div class="feature-card">
+      <span class="feature-icon">🌤️</span>
+      <h3>Common topics</h3>
+      <p>天气、颜色、衣服、城市 — Weather, colors, clothing, cities. We cover the vocabulary you need for real conversations.</p>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">💬</span>
+      <h3>Speaking & listening</h3>
+      <p>Practice speaking Chinese with your classmates. Build confidence through conversation and daily practice.</p>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">✍️</span>
+      <h3>Reading & writing</h3>
+      <p>Master characters and written expression. From basics to fluency at your own pace.</p>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">🌏</span>
+      <h3>Culture & connection</h3>
+      <p>Understand Chinese culture and connect with millions of people who speak Mandarin worldwide.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Why Choose Section -->
+<section class="why-choose">
+  <div class="why-choose-content">
+    <h2 class="section-title">Why learn Mandarin?</h2>
+    <div class="reason-list">
+      <div class="reason-item">
+        <div class="reason-number">1</div>
+        <div class="reason-text">
+          <h3>不难！It's not difficult</h3>
+          <p>Mandarin is easier to learn than you think. With the right guidance and practice, you can do it!</p>
+        </div>
+      </div>
+      <div class="reason-item">
+        <div class="reason-number">2</div>
+        <div class="reason-text">
+          <h3>Millions of speakers</h3>
+          <p>Connect with over 1 billion Mandarin speakers around the world and access Chinese culture.</p>
+        </div>
+      </div>
+      <div class="reason-item">
+        <div class="reason-number">3</div>
+        <div class="reason-text">
+          <h3>Engaging & fun lessons</h3>
+          <p>Every class brings something new and exciting. Learning feels like play, not work.</p>
+        </div>
+      </div>
+      <div class="reason-item">
+        <div class="reason-number">4</div>
+        <div class="reason-text">
+          <h3>Patient instruction</h3>
+          <p>Our teacher is incredibly patient and encouraging. You'll never feel rushed or left behind.</p>
+        </div>
+      </div>
+      <div class="reason-item">
+        <div class="reason-number">5</div>
+        <div class="reason-text">
+          <h3>Supportive community</h3>
+          <p>Learn alongside friendly classmates who support and encourage each other every day.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="cta-content">
+    <h2>Ready to start learning?</h2>
+    <p>加入我们的普通话课吧！Join our Mandarin class today. It won't be difficult, and we believe in you!</p>
+    <a href="#" class="cta-button">Get started → 开始吧</a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>普通话课 © 2024</p>
+  <p>谢谢大家！希望你们加入普通话课。Thank you all! We hope you'll join us.</p>
+</footer>
+
+</body>
+</html>
